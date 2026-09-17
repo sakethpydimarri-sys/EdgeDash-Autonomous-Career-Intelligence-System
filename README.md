@@ -3,7 +3,7 @@
 EdgeDash is an autonomous AI career-intelligence agent designed to fetch job listings, extract factual job requirements using LLMs, score listings deterministically against candidate profiles, identify high-value skill gaps, verify outputs, store data behind an isolated storage interface, and present insights via a read-only web dashboard and natural-language query interface.
 
 - **Public Dashboard**: [Streamlit App](https://edgedash.streamlit.app) *(or your deployed URL)*
-- **GitHub Repository**: [https://github.com/saket/edgedash](https://github.com/saket/edgedash)
+
 
 ---
 
