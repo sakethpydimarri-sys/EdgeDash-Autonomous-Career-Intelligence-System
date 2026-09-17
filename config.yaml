@@ -1,0 +1,66 @@
+target_role: Data Analyst
+target_city: Bengaluru
+keywords:
+  - Python
+  - SQL
+  - Data Visualization
+my_skills:
+  - Python
+  - SQL
+  - Pandas
+  - Tableau
+experience_years: 3
+db_path: edgedash.db
+min_fit_score: 50
+
+# Intelligence & Scoring Configuration
+llm_provider: gemini
+llm_model: gemini-2.0-flash
+score_batch_size: 25
+target_seniority: mid
+
+# Deterministic Scoring Weights (must sum to 1.0)
+skill_weight: 0.45
+seniority_weight: 0.25
+location_weight: 0.15
+recency_weight: 0.15
+
+# This alias map is mine to edit. Add entries when I inspect my own data.
+# Do not merge distinct skills unless I have consciously approved the mapping.
+skill_aliases:
+  k8s: kubernetes
+  postgres: postgres
+  postgresql: postgres
+  psql: postgres
+  gcp: gcp
+  google cloud: gcp
+  google cloud platform: gcp
+  ml: machine learning
+  machine learning: machine learning
+  ci/cd: ci/cd
+  ci cd: ci/cd
+  cicd: ci/cd
+
+# Verification Thresholds (Class 6: Trust Nothing)
+verification:
+  # Minimum score range to catch score inflation or collapsed scoring.
+  min_score_spread: 10
+
+  # Minimum standard deviation to catch nearly identical scores.
+  min_score_stdev: 5
+
+  # Maximum percentage of listings with no extracted required skills.
+  # Catches a silently broken extractor.
+  max_empty_extraction_pct: 20
+
+  # Maximum skills permitted for one listing.
+  # Catches a model returning a sentence instead of individual skills.
+  max_skills_per_listing: 20
+
+  # Minimum number of listings supporting the top-ranked gap.
+  # Catches ranking a finding based on too little evidence.
+  min_gap_sample: 3
+
+  # Maximum age of the newest listing in days.
+  # Catches stale or dead source data.
+  max_data_age_days: 3
